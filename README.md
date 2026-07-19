@@ -182,7 +182,7 @@ supabase/migrations/                # RLS, tables, roles, is_org_member RPC
 
 From the original brief, not yet built:
 
-- **Agentic Traceability** — cite the exact deck slide / web snippet behind each conclusion (evidence log is in place; UI drill-down is next).
+- **Agentic Traceability** — Web snippet behind each conclusion (evidence log is in place; UI drill-down is next).
 - **Validator Agent** — cross-reference extracted claims against market DBs and flag hallucinations.
 - **Sourcing Network Intelligence** — model the graph of programs, cohorts and individuals; learn which channels convert to funded deals.
 - **Cold-start Founder Score** — predict from public footprints (Twitter / LinkedIn) for founders with no funding or GitHub history.
