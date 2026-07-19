@@ -1,0 +1,191 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-primary-container: var(--primary-container);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-tertiary: var(--tertiary);
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
+  --color-bullish: var(--bullish);
+  --color-bearish: var(--bearish);
+  --color-neutral: var(--neutral);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  /* Dark by default — "Synthesized Intelligence" palette */
+  --radius: 0.5rem;
+  --background: #131314;
+  --foreground: #e5e2e3;
+  --card: #1c1b1d;
+  --card-foreground: #e5e2e3;
+  --popover: #201f21;
+  --popover-foreground: #e5e2e3;
+  --primary: #adc6ff;
+  --primary-foreground: #001a42;
+  --secondary: #2a2a2b;
+  --secondary-foreground: #e5e2e3;
+  --muted: #201f21;
+  --muted-foreground: #909097;
+  --accent: #dfc1a7;
+  --accent-foreground: #281807;
+  --destructive: #ffb4ab;
+  --destructive-foreground: #690005;
+  --border: #2a2a2b;
+  --input: #353436;
+  --ring: #adc6ff;
+  --surface-container-low: #1c1b1d;
+  --surface-container: #201f21;
+  --surface-container-high: #2a2a2b;
+  --surface-container-lowest: #0e0e0f;
+  --secondary-container: #0566d9;
+  --on-secondary-container: #e6ecff;
+  --primary-container: #0a0f1e;
+  --on-surface-variant: #c7c6cd;
+  --outline: #909097;
+  --outline-variant: #46464c;
+  --tertiary: #dfc1a7;
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --bullish: #4ade80;
+  --bearish: #f87171;
+  --neutral: #fbbf24;
+  --chart-1: #adc6ff;
+  --chart-2: #dfc1a7;
+  --chart-3: #c2c6db;
+  --chart-4: #4ade80;
+  --chart-5: #f87171;
+  --sidebar: #0e0e0f;
+  --sidebar-foreground: #e5e2e3;
+  --sidebar-primary: #adc6ff;
+  --sidebar-primary-foreground: #001a42;
+  --sidebar-accent: #201f21;
+  --sidebar-accent-foreground: #e5e2e3;
+  --sidebar-border: #2a2a2b;
+  --sidebar-ring: #adc6ff;
+}
+
+.dark {
+  /* Dark is the default; keep .dark identical so both selectors resolve. */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  .font-mono, code, kbd, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@utility label-caps {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility data-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@utility glass-panel {
+  background: color-mix(in oklab, var(--surface-container-low) 70%, transparent);
+  border: 1px solid color-mix(in oklab, var(--outline-variant) 40%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@utility cyber-glow {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--secondary-container) 40%, transparent),
+              0 8px 32px color-mix(in oklab, var(--secondary-container) 25%, transparent);
+}
+
+@utility violet-glow {
+  box-shadow: 0 0 32px color-mix(in oklab, var(--primary) 15%, transparent);
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { scrollbar-width: none; }
+
+.status-pulse { animation: statusPulse 2s ease-in-out infinite; }
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.radar-grid { stroke: color-mix(in oklab, var(--outline-variant) 60%, transparent); stroke-width: 0.5; }
+.radar-area { fill: color-mix(in oklab, var(--secondary) 20%, transparent); stroke: var(--secondary); stroke-width: 1; }
